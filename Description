@@ -1,0 +1,37 @@
+Hi Sebastian,
+
+Answering to your questions:
+
+Choosing a model:
+
+I used Random forest Trees and Linear Support vector Machine from scikit learn
+the Reason I used Random Forest is that it make mutliple decision trees for a given number of scinarios plus it gives god result in intersected label points
+
+Linear Support vector machine is recommended by the scikit learn community if the in the dataset is less than 10 k.
+
+Feature Extraction:
+ I used all 'rner' tokens with all IOB_encoding prefixs as features, and the 'where' tokens(body,subject) and the length of the reguest email which can be calculated from the 'start' and 'length' of each token
+ in the following a complete list of features i used :
+
+ [u'B-Location', u'subject', u'O-', u'B-TimePoint', u'B-Greeting', u'body', u'I-Greeting', u'B-Person', u'B-TimeRange', u'B-EndOfMsg', u'I-EndOfMsg', u'B-AirlineOrAlliance', u'I-TimePoint', u'I-TimeRange', u'B-Luggage', u'B-HotelName', u'I-HotelName', u'I-Location', u'I-Person', u'B-LoyaltyCard', u'B-CountRooms', u'I-CountRooms', u'B-OtherOption', u'B-Breakfast', u'B-CarRentalName', u'B-Seat', u'B-CategoryOrClass', u'I-OtherOption', u'B-Cancelable', u'I-Cancelable', u'I-Breakfast', u'B-FlightNumber', u'B-CarOption', u'B-Rebookable', u'I-CategoryOrClass', u'I-Luggage', u'B-CountPersons', u'I-CountPersons', u'I-Seat', u'I-AirlineOrAlliance', u'I-Rebookable', u'I-LoyaltyCard', u'B-PriceLimit', u'I-PriceLimit', u'B-OtherEntity', u'I-OtherEntity', u'I-FlightNumber', u'I-CarOption', u'I-CarRentalName', u'B-Meal', u'I-Meal', 'length']
+
+
+Data preprocessing:
+ I devided the labeled data into three part Training,Validation,Testing, The Validation Data to choose the number of trees in The Random Forest Model, the test data to evaluate the Model, the Model accuracy was around %64
+
+
+Improvements:
+ - The training data is unbalanced and there is no enough training data with labels like Rebooking,Cancelation if there was enough time I would try to solve it either by balance the data or work around it.
+
+ -there are some label similar such as booking and rebooking and other are not similar at all like cancelation and booking, may be I would have tried to make spererate model to seperate booking and rebooking and then make a general model
+
+ - I didnt use Tokens shape in the training data, if there was more time I would have tried to make the use of it in some way.
+
+
+ I really enjoyed doing this task Thank you Sebastian :)
+ Kind regards
+ Saifeldein
+
+
+
+
