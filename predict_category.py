@@ -119,7 +119,7 @@ class Email_Labels_Recongizer:
     		if curr_accuracy > best_accuracy:
     			best_accuracy=curr_accuracy
     			best_num=num
-    	return num
+    	return best_num
 
 
     def Test_Accuracy(self,model):
